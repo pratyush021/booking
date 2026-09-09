@@ -1,7 +1,7 @@
-package com.booking.app.repository.impl;
+package com.booking.app.booking.repository.impl;
 
-import com.booking.app.entity.User;
-import com.booking.app.repository.UserRepository;
+import com.booking.app.booking.repository.UserRepository;
+import com.booking.app.booking.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UserRepositoryImpl implements UserRepository{
+public class UserRepositoryImpl implements UserRepository {
 
     @Autowired
     private MongoTemplate mongoTemplate;

@@ -1,7 +1,7 @@
-package com.booking.app.controller;
+package com.booking.app.auth.controller;
 
-import com.booking.app.entity.User;
-import com.booking.app.service.UserService;
+import com.booking.app.booking.service.UserService;
+import com.booking.app.booking.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +17,7 @@ public class UserController {
     private UserService userService;
 
 
-    @PostMapping("/users/register")
+    @PostMapping("/auth/register")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User res = userService.register(user);
         if(res != null) {
@@ -27,7 +27,7 @@ public class UserController {
         }
     }
 
-    @PostMapping("/users/login")
+    @PostMapping("/auth/login")
     public ResponseEntity<String> login(
             @RequestParam(required = true) String email,
             @RequestParam(required = true) String password
@@ -39,5 +39,14 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
     }
+	
+	@PostMapping("/auth/refresh") 
+	public ResponseEntity<?> refresh(
+			@RequestParam(required = true) String token
+	) {
+		// refresh the session/token ? 
+
+	}
+
 
 }

@@ -1,14 +1,9 @@
-package com.booking.app.controller;
+package com.booking.app.booking.controller;
 
-import ch.qos.logback.core.status.StatusUtil;
-import com.booking.app.entity.User;
-import org.apache.coyote.Response;
+import com.booking.app.booking.entity.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class BookingController {
